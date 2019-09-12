@@ -26,3 +26,21 @@ test('it should return JWT token when session created',async ({assert,client}) =
     response.assertStatus(200);
     assert.exists(response.body.token);
 });
+
+
+test("it should return JWT Token when register the user and session createding",async ({assert,client}) =>{
+    const registerPayload ={
+        email:"wilkhp29@gmail.com",
+        password:'123456',
+    }
+   
+    
+    const response = await client
+    .post("/register")
+    .send(user)
+    .end();
+
+
+    response.assertStatus(200);
+    assert.exists(response.body.token);
+});

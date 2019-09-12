@@ -18,3 +18,4 @@ const Route = use('Route')
 
 Route.post('/sessions','SessionController.store');
 Route.post('/forget','ForgetPasswordController.store');
+Route.post('/register','RegisterController.store');
